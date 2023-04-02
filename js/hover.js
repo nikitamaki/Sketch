@@ -8,6 +8,7 @@ var error = function error() {
   console.error('Sketchfab API error');
 };
 var success = function success(api) {
+
   api.addEventListener('nodeMouseEnter', function (info) {
     var y = info.material;
     y.channels.EmitColor.factor = 1;
@@ -49,7 +50,7 @@ var success = function success(api) {
           return;
         }
         console.log(result);
-      });
+      });  
     });
   });
 };
