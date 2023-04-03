@@ -1,6 +1,5 @@
 // Sketchfab Viewer API: Hover/click interactions
 var version = '1.12.1';
-// var uid = 'dd958716be0b4786b8700125eec618e5';
 var uid = '3a27a2c8e88f4d18bbf9a10e9efbc5f1';
 var iframe = document.getElementById('api-frame');
 var client = new window.Sketchfab(version, iframe);
@@ -35,8 +34,8 @@ var success = function success(api) {
           'click',
           function(node) {
               window.console.log('click at', node.instanceID);
-              var id = 765;
-              var id2 = 835;
+              var id = 770;
+              var id2 = 840;
               if (node.instanceID === id) {
               api.addEventListener('click', function () {
                 api.hide(id);
@@ -61,6 +60,7 @@ client.init(uid, {
   autostart: 1,
   preload: 1
 });
+
 //////////////////////////////////
 // GUI Code
 //////////////////////////////////
@@ -71,6 +71,7 @@ client.init(uid, {
 //   controls.innerHTML = buttonsText;
 // }
 // initGui();
+
 function initGui() {
   var controls = document.getElementById('controls');
   var buttonsText = '';
