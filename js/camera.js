@@ -34,8 +34,8 @@ var success = function success(api) {
           'click',
           function(node) {
               window.console.log('click at', node.instanceID);
-              var id = 770;
-              var id2 = 840;
+              var id = 710;
+              var id2 = 768;
               if (node.instanceID === id) {
               api.addEventListener('click', function () {
                 api.hide(id);
