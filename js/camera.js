@@ -15,39 +15,40 @@ var success = function success(api) {
           return;
         }
       });
-        //////Camera Set position
-        // api.getCameraLookAt(function(err, camera) {
-        //   window.console.log(camera.position); // [x, y, z]
-        //   window.console.log(camera.target); // [x, y, z]
-        // });
-        // api.setCameraLookAt([0, 13, 10], [0, 10, 0], 4.3, function(err) {
+        // api.getFov(function(err, fov) {
         //   if (!err) {
-        //       window.console.log('Camera moved');
+        //       window.console.log('FOV is', fov); // 45
         //   }
         // });
-        api.getFov(function(err, fov) {
-          if (!err) {
-              window.console.log('FOV is', fov); // 45
-          }
-        });
-        api.addEventListener(
-          'click',
-          function(node) {
+        // ------------ Hide some ID -----------
+        api.addEventListener('click', function(node) {
               window.console.log('click at', node.instanceID);
               var id = 777;
               var id2 = 835;
               if (node.instanceID === id) {
-              api.addEventListener('click', function () {
-                api.hide(id);
+                api.addEventListener('click', function () {
+                  api.hide(id);
               });}
-              if (node.instanceID === id2) {
+              else if (node.instanceID === id2) {
                 api.addEventListener('click', function () {
                   api.hide(id2);
               });}
-              document.getElementById('show').addEventListener('click', function () {
+              // show if unselected
+              else {
+                api.addEventListener('click', function () {
                 api.show(id);
                 api.show(id2);
-              });
+              });}
+              // if (node.instanceID === null) {
+              //   api.addEventListener('click', function () {
+              //   api.show(id);
+              //   api.show(id2);
+              // });}
+
+              // document.getElementById('show').addEventListener('click', function () {
+              //   api.show(id);
+              //   api.show(id2);
+              // });
           },
           { pick: 'fast' }
       );      
