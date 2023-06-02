@@ -14,15 +14,19 @@ var success = function success(api) {
           console.log('Error getting nodes');
           return;
         }
+        // get the id from that log
+        console.log(result);
       });
         // api.getFov(function(err, fov) {
         //   if (!err) {
         //       window.console.log('FOV is', fov); // 45
         //   }
         // });
+        // -----------getNodeMap( [callback] ) -------
+
         // ------------ Hide some ID -----------
         api.addEventListener('click', function(node) {
-              window.console.log('click at', node.instanceID);
+              window.console.log('click at', node.instanceID,);
               var id = 777;
               var id2 = 835;
               if (node.instanceID === id) {

@@ -6,6 +6,8 @@ var client = new window.Sketchfab(version, iframe);
 var error = function error() {
   console.error('Sketchfab API error');
 };
+const id = 777;
+const id2 = 835;
 var success = function success(api) {
   api.start(function () {
     api.addEventListener('viewerready', function () {
@@ -14,17 +16,12 @@ var success = function success(api) {
           console.log('Error getting nodes');
           return;
         }
+        // get the id from that log
+        console.log(result);
       });
-        // api.getFov(function(err, fov) {
-        //   if (!err) {
-        //       window.console.log('FOV is', fov); // 45
-        //   }
-        // });
         // ------------ Hide some ID -----------
         api.addEventListener('click', function(node) {
-              window.console.log('click at', node.instanceID);
-              var id = 777;
-              var id2 = 835;
+              window.console.log('click at', node.instanceID,);
               if (node.instanceID === id) {
                 api.addEventListener('click', function () {
                   api.hide(id);
@@ -33,28 +30,29 @@ var success = function success(api) {
                 api.addEventListener('click', function () {
                   api.hide(id2);
               });}
-              // show if unselected
+              // --------- Show if click outside -------
               else {
                 api.addEventListener('click', function () {
                 api.show(id);
                 api.show(id2);
               });}
-              // if (node.instanceID === null) {
-              //   api.addEventListener('click', function () {
-              //   api.show(id);
-              //   api.show(id2);
-              // });}
-
-              // document.getElementById('show').addEventListener('click', function () {
-              //   api.show(id);
-              //   api.show(id2);
-              // });
           },
           { pick: 'fast' }
-      );      
-    });
+      );});
+    api.addEventListener('annotationFocus', function(index) {
+      if (index === 6) {
+        api.hide(id);
+      }
+      else if (index === 7){
+        api.hide(id2);
+      }
+      else if (index != 7||6){
+        api.show(id);
+        api.show(id2);
+      }
   });
-};
+  });
+  };
 client.init(uid, {
   success: success,
   error: error,
