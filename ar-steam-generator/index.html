@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>&lt;model-viewer&gt; template</title>
+    <meta charset="utf-8">
+    <meta name="description" content="&lt;model-viewer&gt; template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" href="./styles.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <!-- <model-viewer> HTML element -->
+    <model-viewer src="6KWt_export.glb" 
+    id="modelViewer" ar ar-modes="webxr scene-viewer quick-look" 
+    camera-controls  
+    tone-mapping="agx" 
+    poster="poster.webp" 
+    shadow-intensity="0.88" 
+    environment-image="legacy" 
+    exposure="1.23" 
+    camera-orbit="-50.96deg 76.02deg 1.341m" 
+    field-of-view="22.93deg">
+         <!-- Button to change the camera orbit -->
+      <button class="Hotspot" slot="hotspot-1" id="hotspot-1" data-position="-0.22m 0.18m 0.017m" data-normal="-0.9999999987489052m 0.00002024665063986872m 0.00004574125995424325m" data-visibility-attribute="visible">
+          <div class="HotspotAnnotation">1. Water inlet 3/4"</div>
+      </button>
+      <button class="Hotspot" slot="hotspot-2" id="hotspot-2" data-position="-0.226422520526814m 0.2616243015626895m -0.059711685012275695m" data-normal="-0.9999999995241371m -0.000009592481724785921m 0.000029320818586957923m" data-visibility-attribute="visible">
+          <div class="HotspotAnnotation">2. Hot steam outlet 1"</div>
+      </button>
+      <button class="Hotspot" slot="hotspot-3" id="hotspot-3" data-position="-0.2259452705211864m 0.26230500103781784m 0.039507780393295444m" data-normal="-0.9477876092736307m -0.1908021360394504m -0.2555253267098172m" data-visibility-attribute="visible">
+          <div class="HotspotAnnotation">3. Pressure relief valve 1 1/2"
+              with inner threading 1 1/4”</div>
+      </button>
+      <button class="Hotspot" slot="hotspot-4" id="hotspot-4" data-position="-0.2246223453511157m 0.03183290022971014m 0.018146537469082347m" data-normal="-0.999999999411366m -0.000012300705003729568m 0.00003203062284151134m" data-visibility-attribute="visible">
+          <div class="HotspotAnnotation">4 Drain 3/4"</div>
+      </button>
+      <button class="Hotspot" slot="hotspot-5" id="hotspot-5" data-position="0.23191330954138123m 0.34009910395918375m -0.0573019121275289m" data-normal="0.9999999999963358m -0.0000012100909288792674m 0.000002421620332606022m" data-visibility-attribute="visible">
+          <div class="HotspotAnnotation">5 Power supply and control box output</div>
+      </button>
+      <button class="Hotspot" slot="hotspot-6" id="hotspot-6" data-position="0.23949375354847113m 0.33809899855532244m 0.06402676376018575m" data-normal="0.9808877512634657m 0.0601267871196947m 0.18505131421301604m" data-visibility-attribute="visible">
+          <div class="HotspotAnnotation">6 Power input</div>
+      </button>
+      <button class="Hotspot" slot="hotspot-7" id="hotspot-7" data-position="-0.06817187517420603m 0.3680005371570587m 0.06498959784321423m" data-normal="0m 1m 0m" data-visibility-attribute="visible">
+          <div class="HotspotAnnotation">7 Transformer</div>
+      </button>
+      <button class="Hotspot" slot="hotspot-8" id="hotspot-8" data-position="0.02067011378924033m 0.13061551711600186m 0.07934635013155189m" data-normal="0m -4.827940684394488e-8m 0.999999999999999m" data-visibility-attribute="visible">
+          <div class="HotspotAnnotation">8 Heating element</div>
+      </button>
+      <div class="progress-bar hide" slot="progress-bar">
+          <div class="update-bar"></div>
+      </div>
+      <button slot="ar-button" id="ar-button">
+          View in your space
+      </button>
+      <div id="ar-prompt">
+          <img src="ar_hand_prompt.png">
+      </div>
+    </model-viewer>  
+    <script src="script.js"></script>
+    <!-- Loads <model-viewer> for browsers: -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+  </body>
+</html>
