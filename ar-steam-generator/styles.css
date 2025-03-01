@@ -107,3 +107,16 @@ model-viewer[ar-status="session-started"] > #ar-prompt {
 model-viewer > #ar-prompt > img {
   animation: circle 4s linear infinite;
 }
+.Hotspot {
+  font-family: sans-serif;
+  font-size: 16px;
+  text-align: left;
+  padding: 8px 10px;
+  border-radius: 5px;
+  border: none;
+  display: inline-block;
+  max-width: 135px;
+  color:#efefef;
+  background-color: #222222a8;
+  backdrop-filter: blur(2px);
+}
